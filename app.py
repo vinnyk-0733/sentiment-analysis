@@ -7,7 +7,7 @@ st.set_page_config(page_title="Customer Feedback Analysis", layout="wide")
 st.title("🧠 Intelligent Customer Feedback Analysis System")
 
 # --- Load TensorFlow model + tokenizer ---
-model_path = r"F:\project\intelligent customer sentiment analysis\sentiment_model"
+model_path = "sentiment_model"
 
 @st.cache_resource
 def load_model():
