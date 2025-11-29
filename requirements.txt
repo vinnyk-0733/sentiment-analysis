@@ -13,3 +13,4 @@ plotly
 joblib
 reportlab
 tensorflow
+tf-keras
