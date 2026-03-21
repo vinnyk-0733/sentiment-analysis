@@ -7,14 +7,13 @@ st.set_page_config(page_title="Customer Feedback Analysis", layout="wide")
 st.title("🧠 Intelligent Customer Feedback Analysis System")
 
 # --- Load TensorFlow model + tokenizer ---
-model_path = r"sentiment_model\tf_model.h5"
-tokenizer_path = r"sentiment_model\tokenizer.json"
+model_dir = r"sentiment_model"
 
 
 @st.cache_resource
 def load_model():
-    tokenizer = DistilBertTokenizer.from_pretrained(tokenizer_path)
-    model = TFDistilBertForSequenceClassification.from_pretrained(model_path, from_pt=False)
+    tokenizer = DistilBertTokenizer.from_pretrained(model_dir)
+    model = TFDistilBertForSequenceClassification.from_pretrained(model_dir, from_pt=False)
     summarizer = pipeline("summarization", model="t5-small")
     return tokenizer, model, summarizer
 
